@@ -1,0 +1,74 @@
+{
+  "name": "pepkio-dmp-in-a-flash",
+  "version": "0.1.0",
+  "description": "Guided AI-assisted Data Management Plan generator for NIH and NSF grants with funder-compliant editable text, compliance checks, and DOCX export via the Pepkio REST API.",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "bin": {
+    "pepkio-dmp-in-a-flash": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run --exclude '**/integration.test.ts'",
+    "test:integration": "vitest run integration.test.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suzheng/pepkio-dmp-in-a-flash-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/suzheng/pepkio-dmp-in-a-flash-js/issues"
+  },
+  "homepage": "https://www.pepkio.com/tools/dmp-in-a-flash",
+  "keywords": [
+    "dmp-in-a-flash",
+    "data-management-plan",
+    "dmp",
+    "nih",
+    "nsf",
+    "grants",
+    "nih-dms",
+    "data-management",
+    "compliance",
+    "genomics",
+    "pepkio",
+    "laboratory-tools",
+    "life-sciences",
+    "typescript",
+    "node",
+    "rest-api"
+  ],
+  "author": "Pepkio Team",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "commander": "^15.1.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "dotenv": "^18.0.10",
+    "tsup": "^9.0.0",
+    "typescript": "^5.9.3",
+    "vitest": "^5.1.0"
+  }
+}
